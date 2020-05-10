@@ -9,8 +9,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    var athkar = "الله أكبر"
+   @State var counter = 0
     var body: some View {
-        Text("Hello, World!")
+        NavigationView{
+            
+        HStack{
+            NavigationLink(destination: SecondView(thekr: athkar, counter: $counter)) {
+                            Text("\(athkar)")
+                
+
+            }
+            Text("\(counter)")
+            .frame(width: 50, height: 50)
+                .background(Color.blue)
+                .clipShape(Circle())
+        }
+        }
     }
 }
 
